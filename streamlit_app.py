@@ -3,8 +3,7 @@ import openai
 from pdfminer.high_level import extract_text
 
 # Use Streamlit's secrets management to get the OpenAI API key
-secrets = st.secrets["openai"]
-openai_api_key = secrets["api_key"]
+openai_api_key = st.secrets['OPENAI_API_KEY']
 
 with st.sidebar:
     "View the source code"
