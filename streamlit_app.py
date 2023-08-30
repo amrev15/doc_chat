@@ -1,11 +1,12 @@
 import streamlit as st
-import openai_secret_manager
 import openai
 from pdfminer.high_level import extract_text
 
+# Use Streamlit's secrets management to get the OpenAI API key
+secrets = st.secrets["openai"]
+openai_api_key = secrets["api_key"]
+
 with st.sidebar:
-    secrets = openai_secret_manager.get_secret("openai")
-    openai_api_key = secrets["api_key"]
     "View the source code"
     "!Open in GitHub Codespaces"
 
